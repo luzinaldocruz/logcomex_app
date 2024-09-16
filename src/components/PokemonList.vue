@@ -66,13 +66,13 @@ export default {
     async fetchAllPokemons() {
       try {
         this.loading = true;
-        let url = `/pokemon?limit=5000`; // TO DO
+        let nextUrl = `/pokemon?limit=5000`; // TO DO
         let allData = [];
 
-        while (url) {
-          const response = await api.get(url);
+        while (nextUrl) {
+          const response = await api.get(nextUrl);
           allData = allData.concat(response.data.data);
-          url = response.data.next ? response.data.next : null;
+          nextUrl = response.data.next ? response.data.next : null;
         }
 
         this.allPokemons = allData; 
