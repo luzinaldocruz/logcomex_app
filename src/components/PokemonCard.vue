@@ -95,7 +95,7 @@ img {
 
 @media (max-width: 768px) {
   .pokemon-modal {
-    width: 90%;
+    width: 75%;
     padding: 15px;
   }
 
@@ -110,7 +110,7 @@ img {
 
 @media (max-width: 480px) {
   .pokemon-modal {
-    width: 100%;
+    width: 75%;
     padding: 10px;
   }
 
@@ -119,7 +119,7 @@ img {
   }
 
   img {
-    max-width: 80%; 
+    max-width: 70%; 
   }
 }
 
