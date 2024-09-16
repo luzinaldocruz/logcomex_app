@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import api from '../services/api';
+import { fetchAllPokemons } from '../services/api';
 
 export default {
   data() {
@@ -44,7 +44,7 @@ export default {
     };
   },
   created() {
-    this.fetchAllPokemons();
+    this.getAllPokemons();
   },
   computed: {
     totalPages() {
@@ -63,22 +63,15 @@ export default {
     }
   },
   methods: {
-    async fetchAllPokemons() {
+    async getAllPokemons() {
       try {
         this.loading = true;
-        let nextUrl = `/pokemon?limit=5000`; // TO DO
         let allData = [];
-
-        while (nextUrl) {
-          const response = await api.get(nextUrl);
-          allData = allData.concat(response.data.data);
-          nextUrl = response.data.next ? response.data.next : null;
-        }
-
+        const response = await fetchAllPokemons();
+        allData = allData.concat(response.data.data);
         this.allPokemons = allData; 
         this.totalPokemons = allData.length;
         this.loading = false;
-        console.log(allData);
       } catch (error) {
         console.error('Error fetching all Pokémons:', error);
         this.loading = false;
