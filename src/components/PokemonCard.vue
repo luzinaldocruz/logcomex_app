@@ -61,8 +61,9 @@ export default {
   border: 2px solid #ffa500;
   padding: 20px;
   border-radius: 15px;
-  width: 300px;
-  height: 400px;
+  width: 80%;
+  max-width: 400px;
+  height: auto;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -73,7 +74,8 @@ export default {
 }
 
 img {
-  max-width: 100px;
+  max-width: 50%;
+  height: auto;
   border-radius: 50%;
 }
 
@@ -90,4 +92,35 @@ img {
 .close-button:hover {
   background: #ff4500;
 }
+
+@media (max-width: 768px) {
+  .pokemon-modal {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .close-button {
+    padding: 8px 16px;
+  }
+
+  img {
+    max-width: 70%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .pokemon-modal {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .close-button {
+    padding: 5px 10px;
+  }
+
+  img {
+    max-width: 80%; 
+  }
+}
+
 </style>

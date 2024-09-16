@@ -2,7 +2,6 @@
   <div class="container">
     <img :src="leftImage" class="left-image" alt="Left Image" />
     <div class="content">
-      <!-- Formulário ou conteúdo principal -->
       <PokemonCard v-if="selectedPokemon" :pokemon="selectedPokemon" @closeCard="selectedPokemon = null" />
       <PokemonList @pokemonSelected="showPokemonDetails" />
     </div>
@@ -45,6 +44,7 @@ export default {
   height: 100vh;
   padding: 0 20px;
   box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 .left-image, .right-image {
@@ -55,5 +55,27 @@ export default {
 .content {
   flex: 1; 
   text-align: center; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; 
+    justify-content: center;
+    height: auto;
+  }
+
+  .left-image, .right-image {
+    width: 100px; 
+    margin: 10px 0;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .left-image, .right-image {
+    width: 80px;
+  }
 }
 </style>

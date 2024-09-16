@@ -178,4 +178,41 @@ ul.pokemons li:hover {
   font-family: 'Comic Sans MS', sans-serif;
   color: #ff6347;
 }
+
+@media (max-width: 768px) {
+  .pokemon-list {
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 2rem; 
+  }
+
+  .search-container {
+    width: 100%;
+  }
+
+  .search-box {
+    width: 100%; 
+  }
+
+
+  ul.pokemons {
+    max-width: 100%; 
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem; 
+  }
+
+  .search-box {
+    padding: 8px; 
+  }
+
+  ul.pokemons li {
+    padding: 8px; 
+  }
+}
 </style>
